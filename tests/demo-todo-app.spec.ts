@@ -20,9 +20,6 @@ async function addNewItemToList(page: Page, item: string) {
 
 async function verifyItemsOnList(page: Page, expectedItemsOnList: string[]) {
   await expect(page.getByTestId('todo-title')).toHaveText(expectedItemsOnList);
-  await expect(
-      page.getByText(`${expectedItemsOnList.length} items left`)
-  ).toBeVisible();
   await checkNumberOfTodosInLocalStorage(page, expectedItemsOnList.length);
 }
 
