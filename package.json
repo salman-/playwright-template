@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "headed-test": " npx playwright test --headed",
+    "headless-test": " npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/salman-/playwright-template.git"
