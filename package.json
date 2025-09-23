@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "headed-test": " npx playwright test --headed",
-    "headless-test": " npx playwright test"
+    "headless-test": " npx playwright test",
+    "ui-test": "npx playwright test --ui"
   },
   "repository": {
     "type": "git",
