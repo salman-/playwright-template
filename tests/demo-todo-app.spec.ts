@@ -9,9 +9,11 @@ const TODO_ITEMS = [
 
 
 test.describe('New Todo', () => {
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/todomvc');
   });
+  
   test('should allow me to add todo items', async ({ page }) => {
     // Given: There is an item already in list
     const toDoPage = new ToDoPage(page);
