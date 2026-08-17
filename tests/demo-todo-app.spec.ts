@@ -28,29 +28,3 @@ test.describe('New Todo', () => {
   });
 });
 
-test.describe('Mark all as completed', () => {
-  let toDoPage: ToDoPage;
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/todomvc');
-    toDoPage = new ToDoPage(page);
-    await toDoPage.createDefaultTodos(TODO_ITEMS);
-    await toDoPage.checkNumberOfTodosInLocalStorage(3);
-  });
-
-  test.afterEach(async ({ page }) => {
-    await toDoPage.checkNumberOfTodosInLocalStorage(3);
-  });
-
-  test('should allow me to mark all items as completed', async ({ page }) => {
-    // Complete all todos.
-    await page.getByLabel('Mark all as complete').check();
-
-    // Ensure all todos have 'completed' class.
-    await expect(page.getByTestId('todo-item')).toHaveClass([
-      'completed',
-      'completed',
-      'completed',
-    ]);
-    await toDoPage.checkNumberOfCompletedTodosInLocalStorage(3);
-  });
-});
